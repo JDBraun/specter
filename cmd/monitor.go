@@ -9,8 +9,8 @@ import (
 
 var monitorCmd = &cobra.Command{
 	Use:   "monitor",
-	Short: "Monitor pre-defined queries for security events",
-	Long:  "Run pre-defined monitoring queries to detect potential security issues in the audit logs.",
+	Short: "Monitor with pre-built queries.",
+	Long:  "Run pre-defined monitoring queries to detect potentially suspicious activity in the Databricks audit logs.",
 	Run: func(cmd *cobra.Command, args []string) {
 		queryIndex, _ := cmd.Flags().GetInt("run")
 		listQueries, _ := cmd.Flags().GetBool("list")
