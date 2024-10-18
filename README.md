@@ -20,6 +20,7 @@ _**Are you ready to haunt your (lake)house?**_
 ## Installation
 - Create a new table from system.access.audit.
   - **NOTE**: If you're in the [private preview](https://www.databricks.com/resources/other/request-access-databricks-delta-sharing-materialized-views-and-streaming-tables), you could try Delta Sharing a materialized view for fresher data.
+  - **NOTE**: These audit tables may contain **a lot** of data depending on your Databricks usage. It's recommended to review the size and filter down based on your org's requirements.
 
 ```sql
 CREATE OR REPLACE TABLE logging
@@ -108,7 +109,8 @@ Monitoring queries sourced from the [repository](https://github.com/andyweaves/s
 
 ----
 ## Limitations
-Specter has only been validated on MacOS and Databricks on AWS.
+- Specter has only been validated on MacOS and Databricks on AWS.
+- Data needs to be incrementally refreshed at source until materialized view Delta Sharing is out of private preview.
 
 
 ----
