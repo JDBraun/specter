@@ -30,9 +30,10 @@ where event_time >= '2024-01-01T00:00:00'
   - [Set-up Delta Sharing](https://docs.databricks.com/en/delta-sharing/set-up.html)
   - [Add a recipient](https://docs.databricks.com/en/delta-sharing/grant-access.html#grant-recipient-access-to-share)
   - [Create a share](https://docs.databricks.com/en/delta-sharing/create-share.html)
-  - [Add IP ACL](https://docs.databricks.com/en/delta-sharing/access-list.html)
+  - [Add IP of compute executing Specter to IP ACL](https://docs.databricks.com/en/delta-sharing/access-list.html)
 
 - Download [config.share](https://docs.databricks.com/en/delta-sharing/read-data-open.html#databricks-read-shared-data-using-open-sharing-connectors) file from activation link.
+  - **NOTE:** This should be considered extremely sensitive!
 - Download [Go](https://go.dev/) (1.21+ required).
 ```bash
 go version
