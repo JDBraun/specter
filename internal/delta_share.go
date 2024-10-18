@@ -30,6 +30,23 @@ type FileResponse struct {
 	} `json:"file"`
 }
 
+func ReadConfig(filePath string) (*DeltaShareConfig, error) {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return nil, fmt.Errorf("failed to open file: %v", err)
+	}
+	defer file.Close()
+
+	var config DeltaShareConfig
+	decoder := json.NewDecoder(file)
+	err = decoder.Decode(&config)
+	if err != nil {
+		return nil, fmt.Errorf("failed to decode JSON: %v", err)
+	}
+
+	return &config, nil
+}
+
 func FetchDeltaPreSignedURL(share, schema, table string, predicateHints []string, limitHint int) (string, error) {
 	config, err := ReadConfig("config/config.share")
 	if err != nil {
@@ -79,21 +96,4 @@ func FetchDeltaPreSignedURL(share, schema, table string, predicateHints []string
 	}
 
 	return "", fmt.Errorf("no pre-signed URL found in response")
-}
-
-func ReadConfig(filePath string) (*DeltaShareConfig, error) {
-	file, err := os.Open(filePath)
-	if err != nil {
-		return nil, fmt.Errorf("failed to open file: %v", err)
-	}
-	defer file.Close()
-
-	var config DeltaShareConfig
-	decoder := json.NewDecoder(file)
-	err = decoder.Decode(&config)
-	if err != nil {
-		return nil, fmt.Errorf("failed to decode JSON: %v", err)
-	}
-
-	return &config, nil
 }

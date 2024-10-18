@@ -1,6 +1,6 @@
 # Specter
 
-Specter is a CLI tool designed for simple searching and monitoring of Databricks audit logs.
+Specter is a CLI tool designed for simple and fast searching and monitoring of Databricks audit logs.
 
 _**Are you ready to haunt your (lake)house?**_
 
@@ -12,9 +12,9 @@ _**Are you ready to haunt your (lake)house?**_
 ----
 ## Under the Hood
 - **[Unity Catalog](https://docs.databricks.com/en/admin/system-tables/index.html)**: Built-in audit log tables.
-- **[Delta Sharing](https://docs.databricks.com/en/data-sharing/index.html)**: Simple data sharing. 
-- **[DuckDB](https://duckdb.org/docs/connect/overview.html#in-memory-database) + [Go-DuckDB](https://github.com/marcboeker/go-duckdb)**: In-memory SQL analysis.
-- **[Cobra](https://cobra.dev/)**: Go CLI.
+- **[Delta Sharing](https://docs.databricks.com/en/data-sharing/index.html)**: Open data sharing protocol. 
+- **[DuckDB](https://duckdb.org/docs/connect/overview.html#in-memory-database) + [Go-DuckDB](https://github.com/marcboeker/go-duckdb)**: Fast in-memory SQL analysis.
+- **[Cobra](https://cobra.dev/)**: Go CLI framework.
 
 ----
 ## Installation

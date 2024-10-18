@@ -9,10 +9,10 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "specter",
-	Short: "Specter CLI",
-	Long:  `Specter CLI for querying Databricks Delta Share audit logs`,
+	Short: "Specter",
+	Long:  `Specter is for querying Databricks Delta Share audit logs`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Specter CLI is running")
+		fmt.Println("Specter is running")
 	},
 }
 
