@@ -1,4 +1,4 @@
-# Specter
+# Specter 👻
 
 Specter is a CLI tool designed for simple and fast searching and monitoring of Databricks audit logs.
 
