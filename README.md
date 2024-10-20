@@ -64,14 +64,14 @@ The `search` command allows you to filter audit logs based on various criteria l
 **All available service and action names can be found in the [documentation](https://docs.databricks.com/en/admin/account-settings/audit-logs.html).**
 
 ```bash
-specter search --user user@email.com --service clusters --action delete --date "2024-10-09" --export results
+specter search --user user@email.com --service clusters --action delete --date 2024-10-09 --export results
 ```
 
-- `--user`: Filter by user email (e.g., user@databricks.com).
-- `--service`: Filter by service name (e.g., clusters).
-- `--action`: Filter by action name (e.g., delete).
-- `--date`: Filter by event date (e.g., 2024-10-09).
-- `--export`: Export the results to a CSV file (e.g., permissionsCheck).
+- `--user`: Filter by user email (e.g., **user@databricks.com**).
+- `--service`: Filter by service name (e.g., **clusters**).
+- `--action`: Filter by action name (e.g., **delete**).
+- `--date`: Filter by event date (e.g., **2024-10-09**).
+- `--export`: Export the results to a CSV file (e.g., **permissionsCheck**).
 
 ### Monitor
 The `monitor` command runs pre-defined SQL queries that can help you detect potential security issues.
@@ -82,11 +82,10 @@ specter monitor --run 1
 ```
 
 - `--list`: Lists all the pre-defined monitoring queries.
-- `--run`: Runs a specific monitoring query by its number or all if set to `0`.
+- `--run`: Runs a specific monitoring query by its number or all if set to 0.
 
 ### Monitoring Queries
 - **repeated_unauthorized_uc_data_requests** - Detect repeated unauthorized UC data requests
-     
 - **destructive_activities_last_90_days** - Monitor destructive activities over the last 90 days
 - **changes_to_workspace_configuration** - Detect changes to workspace configuration in the last 24 hours
 
