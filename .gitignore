@@ -1,4 +1,4 @@
-# ignore config.share file for delta share
+# ignore IDE files
 .idea
 .idea/*
 
