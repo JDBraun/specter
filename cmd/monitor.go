@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/jdbraun/specter/internal"
 	"github.com/spf13/cobra"
 	"log"
-	"specter/internal"
 )
 
 var monitorCmd = &cobra.Command{

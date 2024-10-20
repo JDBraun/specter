@@ -1,4 +1,4 @@
-module specter
+module github.com/jdbraun/specter
 
 go 1.23.2
 

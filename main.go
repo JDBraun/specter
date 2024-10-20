@@ -1,6 +1,6 @@
 package main
 
-import "specter/cmd"
+import "github.com/jdbraun/specter/cmd"
 
 func main() {
 	cmd.Execute()
