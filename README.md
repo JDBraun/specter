@@ -1,6 +1,6 @@
 # Specter 👻
 
-Specter is a CLI tool designed for simple and fast searching and monitoring of Databricks audit logs.
+Specter is a CLI tool that lets you simply and quickly search and monitor your Databricks audit logs.
 
 _**Are you ready to haunt your (lake)house?**_
 
@@ -20,6 +20,7 @@ _**Are you ready to haunt your (lake)house?**_
 ## Installation
 - Create a new table from system.access.audit.
   - **NOTE**: If you're in the [private preview](https://www.databricks.com/resources/other/request-access-databricks-delta-sharing-materialized-views-and-streaming-tables), you could try Delta Sharing a materialized view for fresher data.
+  - **NOTE**: These audit tables may contain **a lot** of data depending on your Databricks usage. It's recommended to review the size and filter down based on your org's requirements.
 
 ```sql
 CREATE OR REPLACE TABLE logging
@@ -30,9 +31,10 @@ where event_time >= '2024-01-01T00:00:00'
   - [Set-up Delta Sharing](https://docs.databricks.com/en/delta-sharing/set-up.html)
   - [Add a recipient](https://docs.databricks.com/en/delta-sharing/grant-access.html#grant-recipient-access-to-share)
   - [Create a share](https://docs.databricks.com/en/delta-sharing/create-share.html)
-  - [Add IP ACL](https://docs.databricks.com/en/delta-sharing/access-list.html)
+  - [Add IP of compute executing Specter to IP ACL](https://docs.databricks.com/en/delta-sharing/access-list.html)
 
 - Download [config.share](https://docs.databricks.com/en/delta-sharing/read-data-open.html#databricks-read-shared-data-using-open-sharing-connectors) file from activation link.
+  - **NOTE:** This should be considered extremely sensitive!
 - Download [Go](https://go.dev/) (1.21+ required).
 ```bash
 go version
@@ -107,7 +109,8 @@ Monitoring queries sourced from the [repository](https://github.com/andyweaves/s
 
 ----
 ## Limitations
-Specter has only been validated on MacOS and Databricks on AWS.
+- Specter has only been validated on MacOS and Databricks on AWS.
+- Data needs to be incrementally refreshed at source until materialized view Delta Sharing is out of private preview.
 
 
 ----
