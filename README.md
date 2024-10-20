@@ -67,7 +67,7 @@ The `search` command allows you to filter audit logs based on various criteria l
 specter search --user user@email.com --service clusters --action delete --date 2024-10-09 --export results
 ```
 
-- `--user`: Filter by user email (e.g., **user@databricks.com**).
+- `--user`: Filter by user email (e.g., **user@email.com**).
 - `--service`: Filter by service name (e.g., **clusters**).
 - `--action`: Filter by action name (e.g., **delete**).
 - `--date`: Filter by event date (e.g., **2024-10-09**).
